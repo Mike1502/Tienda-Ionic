@@ -1,0 +1,18 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Buscar Productos</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-searchbar (ionInput)="buscar_productos($event)">
+        <ion-icon name="search">
+
+        </ion-icon>
+    </ion-searchbar>
+    <ion-list>
+        <ion-item [navPush]="productoPage" [navParams]="{producto: item }" *ngFor="let item of ps.resultados">
+            {{item.producto}}
+        </ion-item>
+    </ion-list>
+</ion-content>
